@@ -12,16 +12,6 @@ class ListPage extends React.Component {
     }
   }
 
-  moreResultsAvailable2 = () => {
-    console.log(this.props)
-    return 0;
-  }
-//  hasMore={moreResultsAvailable}
-  moreResultsAvailable = () => {
-    console.log(this.props)
-    return true;
-  }
-
   render() {
     let props = this.props;
   //  let allPosts = this.props.data.allPosts;
