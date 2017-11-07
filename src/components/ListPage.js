@@ -4,6 +4,15 @@ import Post from '../components/Post'
 import { gql, graphql } from 'react-apollo'
 import InfiniteScroll from 'react-infinite-scroller'
 
+
+const styles = {
+  card: {
+//    maxWidth: 345,
+    display: 'inline-block',
+    margin: 10,
+  }
+};
+
 class ListPage extends React.Component {
 
   componentWillReceiveProps(nextProps) {
@@ -50,7 +59,7 @@ class ListPage extends React.Component {
             <div>New Post</div>
           </Link>
           <InfiniteScroll
-            className=''
+            className='w-100 flex flex-wrap'
             pageStart={0}
             loadMore={() => props.loadMorePosts()}
             hasMore={props.hasMore}
@@ -59,10 +68,12 @@ class ListPage extends React.Component {
                     </div>}
             >
             {this.props.data.allPosts.map(post => (
-              <Post
-                key={post.id}
-                post={post}
-              />
+              <div className={styles.card}>
+                <Post
+                  key={post.id}
+                  post={post}
+                />
+              </div>
             ))}
         </InfiniteScroll>
 
